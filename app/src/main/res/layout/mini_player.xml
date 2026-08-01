@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Mini bar (always visible at bottom) -->
+    <LinearLayout
+        android:id="@+id/mini_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#FFF"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/mini_album_art"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/default_art" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="8dp">
+            <TextView
+                android:id="@+id/mini_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/mini_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="artist"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Full player (initially off-screen) -->
+    <FrameLayout
+        android:id="@+id/full_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF">
+        <!-- Include the full player layout here, or inflate fragment_player.xml -->
+    </FrameLayout>
+</merge>

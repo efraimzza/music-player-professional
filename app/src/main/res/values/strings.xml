@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Musicc</string>
+<string name="backup">Backup Database</string>
+<string name="restore">Restore Database</string>
+</resources>

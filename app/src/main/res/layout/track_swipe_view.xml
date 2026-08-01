@@ -1,0 +1,64 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Left panel (previous track) -->
+    <LinearLayout
+        android:id="@+id/left_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView android:id="@+id/left_art" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:id="@+id/left_title" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:id="@+id/left_artist" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <!-- Center panel (current track) -->
+    <LinearLayout
+        android:id="@+id/center_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView android:id="@+id/center_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:id="@+id/center_title" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:id="@+id/center_artist" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <!-- Right panel (next track) -->
+    <LinearLayout
+        android:id="@+id/right_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView android:id="@+id/right_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:id="@+id/right_title" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:id="@+id/right_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+</merge>

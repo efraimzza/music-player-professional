@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <!-- חצי שמאלי: אזור החלקה (תמונה 50% רוחב, 100% גובה) -->
+    <FrameLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <!-- חצי ימני: טקסטים (60% גובה, זזים) + פקדים (40% גובה, קבועים) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <!-- טקסטים: 60% גובה - כאן נוסיף את אזור ההחלקה לטקסטים -->
+        <FrameLayout
+            android:id="@+id/texts_swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60" />
+
+        <!-- פקדים: 40% גובה -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btn_shuffle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shuffle"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/btn_prev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_prev"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/btn_play_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_play"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_next"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/btn_repeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_repeat"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
