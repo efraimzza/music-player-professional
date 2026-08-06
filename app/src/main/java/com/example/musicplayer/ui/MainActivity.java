@@ -206,7 +206,34 @@ public class MainActivity extends Activity {
     }*/
     private void setupTab(final int pageIndex, final String tag) {
         TextView tab = new TextView(this);
-        tab.setText(tag);
+        String name="";
+        switch (tag){
+            case "Player":
+                name="נגן";
+                break;
+            case "Folders":
+                name="תיקיות";
+                break;
+            case "Albums":
+                name="אלבומים";
+                break;
+            case "Artist":
+                name="אמנים";
+                break;
+            case "Genre":
+                name="סגנונות";
+                break;
+            case "Queue":
+                name="תור";
+                break;
+            case "Search":
+                name="חיפוש";
+                break;
+            case "Settings":
+                name="הגדרות";
+                break;
+        }
+        tab.setText(name);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT);
         lp.weight = 1.0f;
         tab.setLayoutParams(lp);

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import android.app.Activity;
+import android.content.Intent;
 
 public class QueueManager {
     public static final int REPEAT_OFF = 0;
@@ -26,10 +28,12 @@ public class QueueManager {
         return instance;
     }
 
-    public void setQueue(List<Track> tracks, int startIndex) {
+    public void setQueue(List<Track> tracks, int startIndex,Activity activity) {
         queue.clear();
         queue.addAll(tracks);
         currentIndex = Math.max(0, Math.min(startIndex, queue.size() - 1));
+        activity.sendBroadcast(new Intent("UPDATE_QUEUE_UI"));
+        
     }
 
     public String getNext() {

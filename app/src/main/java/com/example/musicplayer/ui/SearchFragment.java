@@ -47,7 +47,7 @@ public class SearchFragment extends Fragment {
                             
                             List<Track> list = new ArrayList<>();
                             list.add(track);
-                            QueueManager.getInstance().setQueue(list, 0);
+                            QueueManager.getInstance().setQueue(list, 0,getActivity());
                             //PlaybackService svc = ((MainActivity) getActivity()).getService();
                             //if (svc != null) svc.initTrack(track.getPath());
                             ((MainActivity) getActivity()).startService(new Intent(getActivity(),PlaybackService.class).setAction(PlaybackService. ACTION_INIT_TRACK).putExtra("path",track.getPath()));

@@ -133,7 +133,7 @@ public class SettingsFragment extends PreferenceFragment {
                     return true;
                 }
             });
-        findPreference("scan_all").setSummary("tracks="+((MainActivity) getActivity()).getMgr().getCountDb());
+        findPreference("scan_all").setSummary("שירים="+((MainActivity) getActivity()).getMgr().getCountDb());
         // Toggle preferences – they are checkboxes defined in XML
     }
 
@@ -145,7 +145,7 @@ public class SettingsFragment extends PreferenceFragment {
                 @Override
                 public void onScanComplete(int filesAdded) {
                     if(getActivity()!=null)
-                    Toast.makeText(getActivity(), "Full scan finished. Added " + filesAdded + " files.",
+                    Toast.makeText(getActivity(), "הסריקה המלאה הסתימה. נוספו " + filesAdded + " קבצים.",
                                    Toast.LENGTH_LONG).show();
                 }
             });

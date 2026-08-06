@@ -48,7 +48,7 @@ public class TrackListFragment extends Fragment {
                     Track track = tracks.get(position);
                     // Play all tracks of this group starting from clicked one
                     List<Track> queue = new ArrayList<>(tracks);
-                    QueueManager.getInstance().setQueue(queue, position);
+                    QueueManager.getInstance().setQueue(queue, position,getActivity());
                     //PlaybackService svc = ((MainActivity) getActivity()).getService();
                     //if (svc != null) svc.initTrack(track.getPath());
                     ((MainActivity) getActivity()).startService(new Intent(getActivity(),PlaybackService.class).setAction(PlaybackService. ACTION_INIT_TRACK).putExtra("path",track.getPath()));

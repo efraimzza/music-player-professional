@@ -508,7 +508,7 @@ AudioManager.OnAudioFocusChangeListener {
 
         builder.setContentTitle(title)
             .setContentText(artist)
-            .setSmallIcon(R.drawable.ic_play)
+            .setSmallIcon(R.drawable.ic_launcher_notification)
             .setContentIntent(piMain)
             .setPriority(Notification.PRIORITY_MAX)
             .setOngoing(isPlaying)
