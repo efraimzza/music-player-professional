@@ -129,14 +129,145 @@ public class SettingsFragment extends PreferenceFragment {
         findPreference("system_media_scan").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    systemMediaScan();
+                    //systemMediaScan();
+                    showThemeChooser();
                     return true;
                 }
             });
         findPreference("scan_all").setSummary("שירים="+((MainActivity) getActivity()).getMgr().getCountDb());
         // Toggle preferences – they are checkboxes defined in XML
     }
+    public void showThemeChooser() {
+        final String[] names = {
+            "Purple",
+            "Purple Dark",
+            "Red",
+            "Red Dark",
+            "Teal",
+            "Teal Dark",
+            "Blue",
+            "Blue Dark",
+            "Amber",
+            "Amber Dark",
+            "Orange",
+            "Orange Dark",
+            "Green",
+            "Green Dark",
+            "Classic",
+            "Classic Dark",
+            "GRD",
+            "GRD Dark",
+            "PU",
+            "PU Dark",
+            "Custom"
+        };
 
+        final int[] ids = {
+            ThemeManager.PURPLE,
+            ThemeManager.PURPLE_DARK,
+            ThemeManager.R_THEME,
+            ThemeManager.R_THEME_DARK,
+            ThemeManager.TEAL,
+            ThemeManager.TEAL_DARK,
+            ThemeManager.BLUE,
+            ThemeManager.BLUE_DARK,
+            ThemeManager.AMBER,
+            ThemeManager.AMBER_DARK,
+            ThemeManager.ORANGE,
+            ThemeManager.ORANGE_DARK,
+            ThemeManager.GREEN,
+            ThemeManager.GREEN_DARK,
+            ThemeManager.CLASSIC,
+            ThemeManager.CLASSIC_DARK,
+            ThemeManager.GRD,
+            ThemeManager.GRD_DARK,
+            ThemeManager.PU,
+            ThemeManager.PU_DARK,
+            ThemeManager.CUSTOM
+        };
+
+        new AlertDialog.Builder(getActivity())
+            .setTitle("Choose theme")
+            .setItems(
+            names,
+            new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(
+                    DialogInterface dialog,
+                    int which
+                ) {
+                    int selectedId = ids[which];
+
+                    if (selectedId == ThemeManager.CUSTOM) {
+                        showCustomThemeEditor();
+                    } else {
+                        ThemeManager.selectTheme(
+                            getActivity(),
+                            selectedId
+                        );
+
+                        getActivity().recreate();
+                    }
+                }
+            }
+        )
+            .show();
+    }
+    
+    private void showCustomThemeEditor() {
+        final ThemePalette oldPalette =
+            ThemeManager.getCurrentPalette(getActivity());
+
+        final int[] colors = {
+            oldPalette.primary,
+            oldPalette.primaryDark,
+            oldPalette.accent,
+            oldPalette.backItem,
+            oldPalette.text,
+            oldPalette.background
+        };
+
+        chooseNextCustomColor(colors, 0);
+    }
+    
+    private void chooseNextCustomColor(
+        final int[] colors,
+        final int index
+    ) {
+        if (index >= colors.length) {
+            ThemeManager.saveCustomTheme(
+                getActivity(),
+                new ThemePalette(
+                    colors[0], // primary
+                    colors[1], // primaryDark
+                    colors[2], // accent
+                    colors[3], // backItem
+                    colors[4], // text
+                    colors[5]  // background
+                )
+            );
+
+            getActivity().recreate();
+            return;
+        }
+
+        RuntimeColorPicker.show(
+            getActivity(),
+            colors[index],
+            new RuntimeColorPicker.OnColorPickedListener() {
+                @Override
+                public void onColorPicked(int color) {
+                    colors[index] = color;
+
+                    chooseNextCustomColor(
+                        colors,
+                        index + 1
+                    );
+                }
+            }
+        );
+    }
+    
     private void scanAll() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         boolean skipNoMedia = prefs.getBoolean("skip_nomedia", true);

@@ -41,7 +41,7 @@ import android.provider.Settings;
 import android.os.Build;
 import android.net.Uri;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     boolean minit=false;
     private LinearLayout bottomNav;
     //private PlaybackService service;
@@ -205,7 +205,7 @@ public class MainActivity extends Activity {
         //bottomNav.addView(tab);
     }*/
     private void setupTab(final int pageIndex, final String tag) {
-        TextView tab = new TextView(this);
+        TextView tab = new RuntimeTextView(this);
         String name="";
         switch (tag){
             case "Player":

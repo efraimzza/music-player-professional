@@ -1,6 +1,626 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-	</style>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <!-- https://material.io/blog/android-dark-theme-tutorial -->
+    <style name="Base.AppTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    </style>
+
+    <!-- Make the Widget.MaterialComponents.Button.TextButton of AlertDialog use the accent color -->
+    <style name="AppAlertDialogTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/colorAccent</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <!-- Make the TextInputLayout of AlertDialog use the accent color -->
+    <style name="TextInputLayoutOutlined" parent="@android:style/Theme.Material.Light.DarkActionBar">
+
+    </style>
+    <style name="TextInputLayoutOutlinedDropdown" parent="@android:style/Theme.Material.Light.DarkActionBar">
+
+    </style>
+    <style name="Theme.TextInputLayoutOutlined" parent="">
+        <item name="android:colorPrimary">@color/colorAccent</item>
+    </style>
+
+    <!-- White app theme. See values-night-v8 for the dark customizations -->
+    <style name="AppTheme" parent="Base.AppTheme"/>
+    <style name="AppThemeReg" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">?android:colorPrimary</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+
+    </style>
+
     
+
+    <style name="MyActionBar" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:background">@color/colorActionBar</item>
+        <item name="android:elevation">0dp</item>
+        <!--<item name="backgroundStacked">@color/colorActionBar</item>-->
+        <!--<item name="backgroundSplit">@color/colorActionBar</item>-->
+    </style>
+
+    <style name="AppBarOverlay" parent="@android:style/Theme.Material.Light.DarkActionBar" />
+    <style name="PopupOverlay" parent="@android:style/Theme.Material.Light.DarkActionBar" />
+
+    <style name="QuickSettings.Title" parent="AppTheme">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Floating" parent="AppTheme">
+        <item name="android:windowIsFloating">true</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="MDMActionButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rounded_button_background</item>
+
+        <item name="android:padding">14dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    <style name="TextLarge" parent="@android:style/TextAppearance.Material.Large" />
+    <style name="TextMedium" parent="@android:style/TextAppearance.Material.Medium" />
+    <style name="TextSmall" parent="@android:style/TextAppearance.Material.Small" />
+    <style name="TextTitle" parent="@android:style/TextAppearance.Material.Title" />
+
+    <attr name="colorOn" format="reference" />
+    <attr name="colorOff" format="reference" />
+    <attr name="expander" format="reference" />
+    <attr name="iconQueue" format="reference" />
+    <attr name="iconMetered" format="reference" />
+    <attr name="iconSettings" format="reference" />
+    <attr name="iconDatasaver" format="reference" />
+    <attr name="iconLaunch" format="reference" />
+    <attr name="iconDelete" format="reference" />
+    <attr name="iconPlay" format="reference" />
+    <attr name="iconPause" format="reference" />
+    <attr name="colorBackItem" format="reference" />
+    <attr name="colorText" format="reference" />
+
+    <style name="BaseThemeDark" parent="@android:style/Theme.Material.Light.DarkActionBar">
+
+        <item name="colorText">?android:attr/colorPrimary</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:textColorPrimary">?colorText</item>
+        <item name="android:textColorSecondary">?colorText</item>
+        <item name="android:textColorHighlight">?colorBackItem</item>
+        <item name="android:textColorHighlightInverse">?colorBackItem</item>
+        <item name="android:textColorHint">?colorText</item>
+        <item name="android:textColorHintInverse">?colorText</item>
+        <item name="android:textColorLink">?colorText</item>
+        <item name="android:textColorLinkInverse">?colorText</item>
+        <item name="android:textColorPrimaryDisableOnly">?colorText</item>
+        <item name="android:textColorPrimaryInverse">?colorText</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">?colorText</item>
+        <item name="android:textColorPrimaryInverseNoDisable">?colorText</item>
+        <item name="android:textColorPrimaryNoDisable">?colorText</item>
+        <item name="android:textColorSecondaryInverse">?colorText</item>
+        <item name="android:textColorSecondaryInverseNoDisable">?colorText</item>
+        <item name="android:textColorSecondaryNoDisable">?colorText</item>
+        <item name="android:textColorTertiary">?colorText</item>
+        <item name="android:textColorTertiaryInverse">?colorText</item>
+        <item name="android:actionMenuTextColor">?colorText</item>
+        <item name="android:editTextColor">?colorText</item>
+
+        <item name="android:switchStyle">@style/swis</item>
+        <item name="android:radioButtonStyle">@style/rbs</item>
+        <item name="android:checkboxStyle">@style/cbs</item>
+        <item name="android:alertDialogTheme">@style/MyCustomAlertDialogTheme</item>
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
+        <item name="android:actionBarWidgetTheme">@style/MyActionBarWidgetTheme</item>
+
+        <!--item name="android:switchPreferenceStyle">@style/swis</item>
+        <item name="android:switchStyle">@style/swis</item-->
+    </style>
+
+    <style name="BaseThemeLight" parent="@android:style/Theme.Material">
+
+        
+        <item name="colorText">?android:attr/colorPrimary</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:textColorPrimary">?colorText</item>
+        <item name="android:textColorSecondary">?colorText</item>
+        <item name="android:textColorHighlight">?colorBackItem</item>
+        <item name="android:textColorHighlightInverse">?colorBackItem</item>
+        <item name="android:textColorHint">?colorText</item>
+        <item name="android:textColorHintInverse">?colorText</item>
+        <item name="android:textColorLink">?colorText</item>
+        <item name="android:textColorLinkInverse">?colorText</item>
+        <item name="android:textColorPrimaryDisableOnly">?colorText</item>
+        <item name="android:textColorPrimaryInverse">?colorText</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">?colorText</item>
+        <item name="android:textColorPrimaryInverseNoDisable">?colorText</item>
+        <item name="android:textColorPrimaryNoDisable">?colorText</item>
+        <item name="android:textColorSecondaryInverse">?colorText</item>
+        <item name="android:textColorSecondaryInverseNoDisable">?colorText</item>
+        <item name="android:textColorSecondaryNoDisable">?colorText</item>
+        <item name="android:textColorTertiary">?colorText</item>
+        <item name="android:textColorTertiaryInverse">?colorText</item>
+        <item name="android:actionMenuTextColor">?colorText</item>
+        <item name="android:editTextColor">?colorText</item>
+
+        <!--item name="android:switchPreferenceStyle">@style/swis</item-->
+        <item name="android:switchStyle">@style/swis</item>
+        <item name="android:radioButtonStyle">@style/rbs</item>
+        <item name="android:checkboxStyle">@style/cbs</item>
+        <item name="android:alertDialogTheme">@style/MyCustomAlertDialogTheme</item>
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
+        <item name="android:actionBarWidgetTheme">@style/MyActionBarWidgetTheme</item>
+    </style>
+    <style name="CustomActionBar" parent="android:Widget.Material.Light.ActionBar">
+        <item name="android:colorPrimary">?colorText</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
+        <item name="android:background">?colorBackItem</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
+        <item name="android:textColorPrimary">?colorText</item>
+        <item name="android:colorControlNormal">?colorText</item>
+        <item name="android:theme">@style/ActionBarIconsTheme</item>
+        <item name="android:tint">?colorText</item>
+        <item name="android:actionMenuTextColor">?colorText</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>
+    </style>
+    <style name="MyOverflowButtonStyle" parent="android:Widget.Material.ActionButton.Overflow">
+        <item name="android:tint">?colorText</item>
+    </style>
+    <style name="MyActionBarWidgetTheme" parent="android:ThemeOverlay.Material">
+        <item name="android:colorControlNormal">?colorText</item>
+        <item name="android:textColorHint">?colorText</item>
+        <item name="android:textColorPrimary">?colorText</item>
+    </style>
+    <style name="ActionBarIconsTheme" parent="android:ThemeOverlay.Material">
+        <item name="android:actionBarPopupTheme">@style/puptd</item>
+        <item name="android:colorControlNormal">?colorText</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
+        <item name="android:textColorPrimary">?colorText</item>
+        <item name="android:actionMenuTextColor">?colorText</item>
+        <item name="android:tint">?colorText</item>
+        <!--item name="android:background">?colorBackItem</item-->
+    </style>
+    <style name="ActionBarTabStyle" parent="android:Widget.Material.ActionBar.TabView">
+
+        <item name="android:background">@drawable/tab_indicator_background</item>
+        <!--item name="android:background">?colorBackItem</item-->
+        <item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
+
+    </style>
+
+    <style name="ActionBarTabTextStyle" parent="android:TextAppearance.Material.Widget.ActionBar.Subtitle">
+
+        <item name="android:textColor">@drawable/tab_text_color_selector</item>
+
+    </style>
+    <style name="ActionBarTitleText" parent="android:TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textColorHint">?colorText</item>
+        <item name="android:textColor">?colorText</item>
+
+    </style>
+    <style name="MyCustomAlertDialogTheme" parent="android:ThemeOverlay.Material.Dialog.Alert">
+        <!--item name="android:colorPrimary">?android:colorPrimary</item>
+        <item name="android:colorAccent">?android/colorAccent</item-->
+
+        <item name="android:textColorPrimary">?colorText</item>
+        <item name="android:textColorSecondary">?colorText</item>
+        <item name="android:textColorAlertDialogListItem">?colorText</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/my_custom_radio_button</item>
+    </style>
+    <style name="AppThemePurpleT" parent="BaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="colorBackItem">@color/colorBackItem</item>
+        <item name="colorText">@color/tcolorPrimary</item>
+        <!--item name="android:textColorPrimary">@color/tcolorPrimary</item>
+        <item name="android:editTextColor">?colorBackItem</item-->
+        <item name="android:actionBarPopupTheme">@style/pupt</item>
+
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    </style>
+
+    <style name="AppThemePurpleTDark" parent="BaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="colorBackItem">@color/colorBackItemd</item>
+        <item name="colorText">@color/tcolorPrimaryd</item>
+        <!--item name="android:textColorPrimary">?colorText</item>
+        <item name="android:textColorSecondary">?colorText</item>
+        <item name="android:textColorHighlight">?colorText</item>
+        <item name="android:textColorHighlightInverse">?colorText</item>
+        <item name="android:textColorHint">?colorText</item>
+        <item name="android:textColorHintInverse">?colorText</item>
+        <item name="android:textColorLink">?colorText</item>
+        <item name="android:textColorLinkInverse">?colorText</item>
+        <item name="android:textColorPrimaryDisableOnly">?colorText</item>
+        <item name="android:textColorPrimaryInverse">?colorText</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">?colorText</item>
+        <item name="android:textColorPrimaryInverseNoDisable">?colorText</item>
+        <item name="android:textColorPrimaryNoDisable">?colorText</item>
+        <item name="android:textColorSecondaryInverse">?colorText</item>
+        <item name="android:textColorSecondaryInverseNoDisable">?colorText</item>
+        <item name="android:textColorSecondaryNoDisable">?colorText</item>
+        <item name="android:textColorTertiary">?colorText</item>
+        <item name="android:textColorTertiaryInverse">?colorText</item>
+        <item name="android:actionMenuTextColor">?colorText</item>
+        <item name="android:editTextColor">?colorText</item-->
+        <item name="android:popupMenuStyle">@style/CustomPopupMenu</item>
+        <item name="android:popupWindowStyle">@style/CustomPopupMenu</item>
+        <item name="android:actionBarPopupTheme">@style/puptd</item>
+
+        <!--item name="android:actionBarItemBackground">@color/tcolorPrimaryd</item-->
+
+        <!--item name="android:textViewStyle">@style/WidgetAppViewRounded</item-->
+        <!--litem name="android:itemBackground">@color/tcolorPrimaryd</item-->
+        <!--item name="android:selectableItemBackground">@color/tcolorPrimaryd</item-->
+        <!--item name="android:itemBackground">@drawable/rounded_background</item-->
+        <!--item name="android:background">@drawable/rounded_background</item-->
+        <!--item name="android:colorBackground">@color/tcolorPrimaryd</item-->
+        <!--item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item-->
+
+        <!--item name="android:windowBackground">@drawable/rounded_background</item-->
+        <!--item name="android:absListViewStyle">@style/AbsListViewStyle</item>
+        <item name="android:listMenuViewStyle">@style/AbsListViewStyle</item>
+        <item name="android:listViewStyle">@style/AbsListViewStyle</item>
+        <item name="android:listViewWhiteStyle">@style/AbsListViewStyle</item-->
+        <item name="android:listPopupWindowStyle">@style/AbsListViewStyle</item>
+        <!--item name="android:panelBackground">@style/AbsListViewStyle</item-->
+
+        <!--item name="android:buttonStyle">@style/AbsListViewStyle</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowFullscreen">false</item-->
+        <!--item name="android:actionLayout">@style/la</item-->
+        <!--item name="android:previewLayout">@style/la</item>
+        <item name="android:keyPreviewLayout">@style/la</item>
+        <item name="android:paddingStart">1dp</item>
+        <item name="android:paddingEnd">1dp</item-->
+
+        <!--item name="android:textColor">@color/tcolorPrimaryd</item-->
+        <!--item name="android:drawable.menuitem.background">@color/tcolorPrimaryd</item-->
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    </style>
+    <!--style name="CustomPopupMenu" parent="@android:Widget.PopupMenu">
+    <item name="android:background">@drawable/rounded_background</item> 
+    </style-->
+    <style name="CustomPopupMenu" parent="@android:Widget.PopupMenu">
+        <item name="android:popupBackground">@drawable/my_menu_background</item>
+    </style>
+    <!--style name="AbsListViewStyle" parent="@android:Widget.AbsListView">
+    <item name="android:background">@drawable/rounded_background</item> 
+    <item name="android:paddingStart">0dp</item> 
+    <item name="android:paddingEnd">0dp</item>
+    <item name="android:paddingTop">0dp</item>
+    <item name="android:paddingBottom">0dp</item>
+    </style-->
+    <style name="AbsListViewStyle">
+
+        <!--item name="android:itemBackground">@drawable/rounded_background</item-->
+        <item name="android:textColor">@color/tcolorPrimaryd</item>
+        <item name="android:textViewStyle">@style/WidgetAppViewRounded</item>
+
+    </style>
+    <style name="pupt" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:colorBackground">?colorText</item>
+        <item name="android:itemBackground">@drawable/rounded_background</item>
+        <item name="android:textColor">?colorText</item>
+        <item name="android:textViewStyle">@style/WidgetAppViewRounded</item>
+
+    </style>
+    <style name="puptd" parent="@android:style/ThemeOverlay.Material.Dark.ActionBar">
+        <item name="android:colorBackground">?colorText</item>
+        <item name="android:itemBackground">@drawable/rounded_background</item>
+        <item name="android:textColor">?colorText</item>
+        <item name="android:textViewStyle">@style/WidgetAppViewRounded</item>
+    </style>
+    <style name="swis" parent="@android:style/Widget.Material.Light.CompoundButton.Switch">
+        <!--item name="android:colorBackground">?colorText</item>
+        <item name="android:itemBackground">@drawable/rounded_background</item>
+        <item name="android:textColor">?colorText</item>
+        <item name="android:textViewStyle">@style/WidgetAppViewRounded</item-->
+        <item name="android:thumb">@drawable/custom_switch_thumb</item>
+        <item name="android:track">@drawable/custom_switch_track</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="rbs" parent="@android:style/Widget.Material.Light.CompoundButton.RadioButton">
+        <item name="android:colorBackground">?colorText</item>
+        <item name="android:itemBackground">@drawable/rounded_background</item>
+        <item name="android:textColor">?colorText</item>
+        <item name="android:textViewStyle">@style/WidgetAppViewRounded</item>
+        <item name="android:thumb">@drawable/custom_switch_thumb</item>
+        <item name="android:track">@drawable/custom_switch_track</item>
+    </style>
+    <style name="cbs" parent="@android:style/Widget.Material.Light.CompoundButton.CheckBox">
+        <item name="android:colorBackground">?colorText</item>
+        <item name="android:itemBackground">@drawable/rounded_background</item>
+        <item name="android:textColor">?colorText</item>
+        <item name="android:textViewStyle">@style/WidgetAppViewRounded</item>
+        <item name="android:thumb">@drawable/custom_switch_thumb</item>
+        <item name="android:track">@drawable/custom_switch_track</item>
+    </style>
+    <!--style name="la" parent="@android:Widget.PopupMenu">
+    <item name="android:colorBackground">@color/colorBackItemd</item>
+    <item name="android:background">@drawable/rounded_background</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:paddingStart">16dp</item>
+    <item name="android:paddingEnd">16dp</item>
+    <item name="android:paddingTop">0dp</item>
+    <item name="android:paddingBottom">0dp</item>
+    <item name="android:paddingRight">20dp</item>
+    <item name="android:paddingLeft">20dp</item>
+    <item name="android:ellipsize">none</item>
+    <item name="android:maxLines">20</item>
+
+    <item name="android:layout_marginTop">26dp</item>
+    <item name="android:layout_marginBottom">26dp</item>
+    </style-->
+    <style name="WidgetAppViewRounded" parent="@android:Widget.TextView">
+        <!--item name="android:background">@drawable/rounded_background</item-->
+        <item name="android:background">@drawable/rounded_background_nostroke</item>
+        <item name="android:textColor">?colorText</item>
+        <!--item name="android:itemBackground">@drawable/rounded_background</item-->
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:maxLines">20</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">26dp</item>
+        <item name="android:layout_marginBottom">26dp</item>
+
+    </style>
+    <style name="AppThemePurpleR" parent="BaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorRAccent</item>
+
+        <item name="colorText">?android:attr/colorPrimary</item>
+
+        <item name="colorBackItem">@color/colorRBackItem</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    </style>
+
+    <style name="AppThemePurpleRDark" parent="BaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/colorPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorRAccent</item>
+        <item name="colorBackItem">@color/colorRBackItemd</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    </style>
+
+    <style name="AppThemeTeal" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorTealPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorTealPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorTealAccent</item>
+        <item name="colorBackItem">@color/colorTealBackItem</item>
+        <item name="colorOn">@color/colorTealOn</item>
+        <item name="colorOff">@color/colorTealOff</item>
+    </style>
+
+    <style name="AppThemeTealDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorTealPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorTealPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorTealAccent</item>
+        <item name="colorBackItem">@color/colorTealBackItemd</item>
+        <item name="colorOn">@color/colorTealOn</item>
+        <item name="colorOff">@color/colorTealOff</item>
+    </style>
+
+    <style name="AppThemeBlue" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorBluePrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorBluePrimaryDark</item>
+        <item name="android:colorAccent">@color/colorBlueAccent</item>
+        <item name="colorBackItem">@color/colorBlueBackItem</item>
+        <item name="colorOn">@color/colorBlueOn</item>
+        <item name="colorOff">@color/colorBlueOff</item>
+    </style>
+
+    <style name="AppThemeBlueDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorBluePrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorBluePrimaryDark</item>
+        <item name="android:colorAccent">@color/colorBlueAccent</item>
+        <item name="colorBackItem">@color/colorBlueBackItemd</item>
+        <item name="colorOn">@color/colorBlueOn</item>
+        <item name="colorOff">@color/colorBlueOff</item>
+    </style>
+
+    <style name="AppThemePurple" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorPurplePrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPurplePrimaryDark</item>
+        <item name="android:colorAccent">@color/colorPurpleAccent</item>
+        <item name="colorBackItem">@color/colorPurpleBackItem</item>
+        <item name="colorOn">@color/colorPurpleOn</item>
+        <item name="colorOff">@color/colorPurpleOff</item>
+    </style>
+
+    <style name="AppThemePurpleDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorPurplePrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorPurplePrimaryDark</item>
+        <item name="android:colorAccent">@color/colorPurpleAccent</item>
+        <item name="colorBackItem">@color/colorPurpleBackItemd</item>
+        <item name="colorOn">@color/colorPurpleOn</item>
+        <item name="colorOff">@color/colorPurpleOff</item>
+    </style>
+
+    <style name="AppThemeAmber" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorAmberPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorAmberPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAmberAccent</item>
+        <item name="colorBackItem">@color/colorAmberBackItem</item>
+        <item name="colorOn">@color/colorAmberOn</item>
+        <item name="colorOff">@color/colorAmberOff</item>
+    </style>
+
+    <style name="AppThemeAmberDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorAmberPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorAmberPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAmberAccent</item>
+        <item name="colorBackItem">@color/colorAmberBackItemd</item>
+        <item name="colorOn">@color/colorAmberOn</item>
+        <item name="colorOff">@color/colorAmberOff</item>
+    </style>
+
+    <style name="AppThemeOrange" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorOrangePrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorOrangePrimaryDark</item>
+        <item name="android:colorAccent">@color/colorOrangeAccent</item>
+        <item name="colorBackItem">@color/colorOrangeBackItem</item>
+        <item name="colorOn">@color/colorOrangeOn</item>
+        <item name="colorOff">@color/colorOrangeOff</item>
+    </style>
+
+    <style name="AppThemeOrangeDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorOrangePrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorOrangePrimaryDark</item>
+        <item name="android:colorAccent">@color/colorOrangeAccent</item>
+        <item name="colorBackItem">@color/colorOrangeBackItemd</item>
+        <item name="colorOn">@color/colorOrangeOn</item>
+        <item name="colorOff">@color/colorOrangeOff</item>
+    </style>
+
+    <style name="AppThemeGreen" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorGreenPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorGreenPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorGreenAccent</item>
+        <item name="colorBackItem">@color/colorGreenBackItem</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeGreenDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorGreenPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorGreenPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorGreenAccent</item>
+        <item name="colorBackItem">@color/colorGreenBackItemd</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeClassic" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorClassicPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorClassicPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorClassicAccent</item>
+        <item name="colorBackItem">@color/colorClassicBackItem</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeClassicDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorClassicPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorClassicPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorClassicAccentd</item>
+        <item name="colorBackItem">@color/colorClassicBackItemd</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeGrd" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorGrdPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorGrdPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorGrdAccent</item>
+        <item name="colorBackItem">@color/colorGrdBackItem</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeGrdDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorGrdPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorGrdPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorGrdAccentd</item>
+        <item name="colorBackItem">@color/colorGrdBackItemd</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemePu" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorPuPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPuPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorPuAccent</item>
+        <item name="colorBackItem">@color/colorPuBackItem</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemePuDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorPuPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorPuPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorPuAccentd</item>
+        <item name="colorBackItem">@color/colorPuBackItemd</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeMo" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorMoPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorMoPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorMoAccent</item>
+        <item name="colorBackItem">@color/colorMoBackItem</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeMoDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorMoPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorMoPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorMoAccentd</item>
+        <item name="colorBackItem">@color/colorMoBackItemd</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeCo" parent="BaseThemeDark">
+        <item name="android:colorPrimary">@color/colorCoPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorCoPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorCoAccent</item>
+        <item name="colorBackItem">@color/colorCoBackItem</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
+
+    <style name="AppThemeCoDark" parent="BaseThemeLight">
+        <item name="android:colorPrimary">@color/colorCoPrimaryl</item>
+        <item name="android:colorPrimaryDark">@color/colorCoPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorCoAccentd</item>
+        <item name="colorBackItem">@color/colorCoBackItemd</item>
+        <item name="colorOn">@color/colorGreenOn</item>
+        <item name="colorOff">@color/colorGreenOff</item>
+    </style>
 </resources>
+

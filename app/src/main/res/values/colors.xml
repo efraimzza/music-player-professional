@@ -1,6 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorTab">#7A5EBC</color>
+    <color name="colorTabText">@android:color/tertiary_text_light</color>
+    <color name="colorTabTextSelected">@android:color/secondary_text_light</color>
+    <color name="colorPrimary">#4527a0</color>
+    <color name="colorPrimaryl">#FFC6B3FF</color>
+    <color name="tcolorPrimary">#4527a0</color>
+    <color name="tcolorPrimaryd">#FFC6B3FF</color>
+    <color name="colorPrimaryDark">#4D3294</color>
+    <color name="colorActionBar">#4527a0</color>
+    <color name="colorAccent">#FF2AD6D1</color>
+    <color name="colorRAccent">#FFFF2072</color>
+    <color name="colorBackItem">#FF9FFFFC</color>
+    <color name="colorBackItemd">#FF3DA4A7</color>
+    <color name="colorRBackItem">#FFFFA2C4</color>
+    <color name="colorRBackItemd">#FFB03E68</color>
+    <color name="colorAccentLight">#D8ADBD</color>
+    <color name="colorBackgroundGray">#2C000000</color>
+
+    <color name="backgroundColor">#FFFAFAFA</color>
+    <color name="drawerItemColor">#404040</color>
+    <color name="statusOpen">#28BC36</color>
+    <color name="statusClosed">#AAAAAA</color>
+    <color name="statusError">#F20015</color>
+    <color name="ok">#0CB350</color>
+    <color name="warning">#FF9800</color>
+    <color name="danger">#F80013</color>
+    <color name="in_progress">#29b6f6</color>
+    <color name="highContrast">#000000</color>
+    <color name="sentPayloadBg">#FBEDED</color>
+    <color name="sentPayloadFg">#7F0000</color>
+    <color name="rcvdPayloadBg">#EDEDFB</color>
+    <color name="rcvdPayloadFg">#00007F</color>
+    <color name="lightGray">#aaa</color>
+
+    <color name="colorTealPrimary">#009688</color>
+    <color name="colorTealPrimaryl">#FF7BD9D0</color>
+    <color name="colorTealPrimaryDark">#00796B</color>
+    <color name="colorTealAccent">#FFFF6B3D</color>
+    <color name="colorTealBackItem">#FFFFB39C</color>
+    <color name="colorTealBackItemd">#FFFF4D15</color>
+    <color name="colorTealOn">#009688</color>
+    <color name="colorTealOff">#FF5722</color>
+
+    <color name="colorBluePrimary">#2196F3</color>
+    <color name="colorBluePrimaryl">#FF83C8FF</color>
+    <color name="colorBluePrimaryDark">#1976D2</color>
+    <color name="colorBlueAccent">#FFFF7D54</color>
+    <color name="colorBlueBackItem">#FFFFBEA9</color>
+    <color name="colorBlueBackItemd">#FFFC6434</color>
+    <color name="colorBlueOn">#2196F3</color>
+    <color name="colorBlueOff">#FF5722</color>
+
+    <color name="colorPurplePrimary">#9C27B0</color>
+    <color name="colorPurplePrimaryl">#FFE0A0EB</color>
+    <color name="colorPurplePrimaryDark">#7B1FA2</color>
+    <color name="colorPurpleAccent">#FFEE6F6F</color>
+    <color name="colorPurpleBackItem">#FFFFA7A7</color>
+    <color name="colorPurpleBackItemd">#FFE43232</color>
+    <color name="colorPurpleOn">#9C27B0</color>
+    <color name="colorPurpleOff">#FF5252</color>
+
+    <color name="colorAmberPrimary">#FFC107</color>
+    <color name="colorAmberPrimaryl">#FFFFE28B</color>
+    <color name="colorAmberPrimaryDark">#FFA000</color>
+    <color name="colorAmberAccent">#FF598FE9</color>
+    <color name="colorAmberBackItem">#FF92B9FA</color>
+    <color name="colorAmberBackItemd">#FF3274E4</color>
+    <color name="colorAmberOn">#448AFF</color>
+    <color name="colorAmberOff">#FFC107</color>
+
+    <color name="colorOrangePrimary">#FF5722</color>
+    <color name="colorOrangePrimaryl">#FFFFB199</color>
+    <color name="colorOrangePrimaryDark">#E64A19</color>
+    <color name="colorOrangeAccent">#FF6E8B98</color>
+    <color name="colorOrangeBackItem">#FF8EB2C2</color>
+    <color name="colorOrangeBackItemd">#FF445C67</color>
+    <color name="colorOrangeOn">#607D8B</color>
+    <color name="colorOrangeOff">#FF5722</color>
+
+    <color name="colorGreenPrimary">#4CAF50</color>
+    <color name="colorGreenPrimaryl">#FFA1FFA5</color>
+    <color name="colorGreenPrimaryDark">#388E3C</color>
+    <color name="colorGreenAccent">#FF9CCF60</color>
+    <color name="colorGreenBackItem">#FFCEEDAA</color>
+    <color name="colorGreenBackItemd">#FF84CF2C</color>
+    <color name="colorGreenOn">#8BC34A</color>
+    <color name="colorGreenOff">#F44336</color>
+
+    <color name="colorClassicPrimary">#262626</color>
+    <color name="colorClassicPrimaryl">#FFD700</color>
+    <color name="colorClassicPrimaryDark">#262626</color>
+    <color name="colorClassicAccent">#B8860B</color>
+    <color name="colorClassicAccentd">#FF9E9E9E</color>
+    <color name="colorClassicBackItem">#F5F5F5</color>
+    <color name="colorClassicBackItemd">#1A1A1A</color>
+    <color name="colorClassicOn">#8BC34A</color>
+    <color name="colorClassicOff">#F44336</color>
+
+    <color name="colorGrdPrimary">#004D40</color>
+    <color name="colorGrdPrimaryl">#E0F2F1</color>
+    <color name="colorGrdPrimaryDark">#004D40</color>
+    <color name="colorGrdAccent">#80CBC4</color>
+    <color name="colorGrdAccentd">#4DB6AC</color>
+    <color name="colorGrdBackItem">#E8F5E9</color>
+    <color name="colorGrdBackItemd">#263238</color>
+    <color name="colorGrdOn">#8BC34A</color>
+    <color name="colorGrdOff">#F44336</color>
+
+    <color name="colorPuPrimary">#4A148C</color>
+    <color name="colorPuPrimaryl">#E1BEE7</color>
+    <color name="colorPuPrimaryDark">#4A148C</color>
+    <color name="colorPuAccent">#9C27B0</color>
+    <color name="colorPuAccentd">#7986CB</color>
+    <color name="colorPuBackItem">#F3E5F5</color>
+    <color name="colorPuBackItemd">#1A237E</color>
+    <color name="colorPuOn">#8BC34A</color>
+    <color name="colorPuOff">#F44336</color>
+
+    <color name="colorMoPrimary">#795548</color>
+    <color name="colorMoPrimaryl">#FFCC80</color>
+    <color name="colorMoPrimaryDark">#795548</color>
+    <color name="colorMoAccent">#FFB5A8A4</color>
+    <color name="colorMoAccentd">#A1887F</color>
+    <color name="colorMoBackItem">#EDE7F6</color>
+    <color name="colorMoBackItemd">#3E2723</color>
+    <color name="colorMoOn">#8BC34A</color>
+    <color name="colorMoOff">#F44336</color>
+
+    <color name="colorCoPrimary">#37474F</color>
+    <color name="colorCoPrimaryl">#B0BEC5</color>
+    <color name="colorCoPrimaryDark">#37474F</color>
+    <color name="colorCoAccent">#78909C</color>
+    <color name="colorCoAccentd">#607D8B</color>
+    <color name="colorCoBackItem">#ECEFF1</color>
+    <color name="colorCoBackItemd">#263238</color>
+    <color name="colorCoOn">#8BC34A</color>
+    <color name="colorCoOff">#F44336</color>
+
+    <color name="colorSend">#FF0000</color>
+    <color name="colorReceive">#0000FF</color>
+
+    <color name="colorGrayed">#AAAAAA</color>
 </resources>
+

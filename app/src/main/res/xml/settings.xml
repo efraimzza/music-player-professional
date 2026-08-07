@@ -1,38 +1,38 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
+        android:title="לא לסרוק תיקיות עם קובץ .nomedia"
         android:key="skip_nomedia"
-        android:title="Ignore .nomedia directories"
         android:defaultValue="true" />
     <CheckBoxPreference
+        android:title="סריקה בהפעלה מחדש"
         android:key="scan_on_boot"
-        android:title="Scan on system boot"
         android:defaultValue="false" />
     <CheckBoxPreference
+        android:title="סריקה בהכנסת כרטיס זיכרוו"
         android:key="scan_on_media"
-        android:title="Scan when external storage mounted"
         android:defaultValue="false" />
     <Preference
-        android:key="scan_all"
-        android:title="Scan all storage" />
+        android:title="סריקת הכל"
+        android:key="scan_all" />
     <Preference
-        android:key="scan_music_folders"
-        android:title="Scan music folders only" />
+        android:title="סריקת תיקיות מוזיקה בלבד"
+        android:key="scan_music_folders" />
     <Preference
-        android:key="pick_folder"
-        android:title="Pick a folder to scan" />
+        android:title="בחר תיקייה לסריקה"
+        android:key="pick_folder" />
     <Preference
-        android:key="system_media_scan"
-        android:title="Trigger system media scan" />
+        android:title="גרום לסריקת מערכת"
+        android:key="system_media_scan" />
     <Preference
-        android:key="clear_db"
-        android:title="Clear database" />
+        android:title="מחיקת נתוני סריקה (מומלץ לפעמים בעדכונים לאפליקציה)"
+        android:key="clear_db" />
     <Preference
-        android:key="backup"
-        android:title="Backup database" />
+        android:title="גיבוי נתוני סריקה"
+        android:key="backup" />
     <Preference
-        android:key="restore"
-        android:title="Restore database" />
+        android:title="שחזור נתוני סריקה"
+        android:key="restore" />
     <Preference
-        android:key="sleep_timer"
-        android:title="Sleep timer" />
+        android:title="טימר שינה"
+        android:key="sleep_timer" />
 </PreferenceScreen>

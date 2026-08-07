@@ -6,10 +6,13 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.ArrayList;
 import android.app.Activity;
+import android.graphics.Color;
 
 public class customAdapter extends BaseAdapter {
     private List<String> items = new ArrayList<>();
     Activity activity;
+    private int normalColor = Color.DKGRAY;
+    private int pressedColor = Color.GRAY;
     public void setItems(Activity activity,List<String> items){
         this.activity=activity;
         this.items=items;
@@ -33,6 +36,16 @@ public class customAdapter extends BaseAdapter {
         }
         TextView text = convertView.findViewById(android.R.id.text1);
         text.setText(items.get(position));
+        
+        RuntimeBackground.apply(
+            activity,
+            convertView,
+            normalColor,
+            pressedColor,
+            28f,
+            32f
+        );
+        
         return convertView;
     }
 }
