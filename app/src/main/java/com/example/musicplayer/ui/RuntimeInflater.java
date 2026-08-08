@@ -228,6 +228,7 @@ public final class RuntimeInflater {
             textView.setLinkTextColor(
                 palette.text
             );
+            LogUtil.logToFile("tvi="+palette.text);
         }
         if (view instanceof EditText) {
             EditText editText =
@@ -244,6 +245,7 @@ public final class RuntimeInflater {
             editText.setLinkTextColor(
                 palette.text
             );
+            LogUtil.logToFile("edi="+palette.text);
         }
         /*
          * Buttons יקבלו colorBackItem כרקע
@@ -358,7 +360,7 @@ public final class RuntimeInflater {
                 ColorStateList.valueOf(
                     ThemeManager
                     .getCurrentPalette(context)
-                    .backItem
+                    .primary
                 )
             );
         } else {

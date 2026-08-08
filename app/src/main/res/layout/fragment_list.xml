@@ -19,6 +19,11 @@
 		android:id="@+id/list"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:clipToPadding="false"
 		/>
 
 </RelativeLayout>

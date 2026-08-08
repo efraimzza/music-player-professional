@@ -25,13 +25,13 @@
                 android:id="@+id/mini_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="title"
+                android:text="כותרת"
                 android:textSize="16sp" />
             <TextView
                 android:id="@+id/mini_artist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="artist"
+                android:text="אמן"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>

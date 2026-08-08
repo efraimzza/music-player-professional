@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Title" />
+        android:text="כותרת" />
 
     <TextView
         android:id="@+id/artist_name"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:layout_marginTop="4dp"
-        android:text="Artist" />
+        android:text="אמן" />
 
     <TextView
         android:id="@+id/album_name"
@@ -28,5 +28,5 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:layout_marginTop="2dp"
-        android:text="Album" />
+        android:text="אלבום" />
 </LinearLayout>

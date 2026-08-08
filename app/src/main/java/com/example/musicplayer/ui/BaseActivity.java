@@ -20,7 +20,7 @@ public abstract class BaseActivity extends Activity {
              setTheme(ThemeManager.getStyle(this));
          }else{
         setTheme(R.style.AppThemeMoDark);
-        
+        }
         palette = ThemeManager.getCurrentPalette(this);
 
         /*
@@ -30,7 +30,7 @@ public abstract class BaseActivity extends Activity {
             getLayoutInflater(),
             palette
         );
-}
+
         super.onCreate(savedInstanceState);
     }
 

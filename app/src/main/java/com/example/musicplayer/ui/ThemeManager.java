@@ -39,7 +39,10 @@ public final class ThemeManager {
 
     public static final int PU = 19;
     public static final int PU_DARK = 20;
-
+    
+    public static final int MO = 21;
+    public static final int MO_DARK = 22;
+    
     public static final int CUSTOM = 1000;
 
     private static final String PREFS = "theme_settings";
@@ -123,7 +126,13 @@ public final class ThemeManager {
 
             case PU_DARK:
                 return R.style.AppThemePuDark;
+                
+            case MO:
+                return R.style.AppThemeMo;
 
+            case MO_DARK:
+                return R.style.AppThemeMoDark;
+                
             case CUSTOM:
                 // Style בסיסי בלבד.
                 // הצבעים המותאמים יוחלו לאחר setContentView.

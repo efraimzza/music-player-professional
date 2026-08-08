@@ -159,6 +159,8 @@ public class SettingsFragment extends PreferenceFragment {
             "GRD Dark",
             "PU",
             "PU Dark",
+            "MO",
+            "MO Dark",
             "Custom"
         };
 
@@ -183,6 +185,8 @@ public class SettingsFragment extends PreferenceFragment {
             ThemeManager.GRD_DARK,
             ThemeManager.PU,
             ThemeManager.PU_DARK,
+            ThemeManager.MO,
+            ThemeManager.MO_DARK,
             ThemeManager.CUSTOM
         };
 
@@ -250,9 +254,31 @@ public class SettingsFragment extends PreferenceFragment {
             getActivity().recreate();
             return;
         }
-
+        LogUtil.logToFile("i="+index+"c="+colors[index]);
+        String title="";
+        switch(index){
+            case 0:
+                title="ראשוני";
+                break;
+            case 1:
+                title="ראשוני שחור";
+                break;
+            case 2:
+                title="שני";
+                break;
+            case 3:
+                title="רקע לפריט";
+                break;
+            case 4:
+                title="טקסט";
+                break;
+            case 5:
+                title="רקע";
+                break;
+        }
         RuntimeColorPicker.show(
             getActivity(),
+            title,
             colors[index],
             new RuntimeColorPicker.OnColorPickedListener() {
                 @Override

@@ -12,10 +12,11 @@ public class customAdapter extends BaseAdapter {
     private List<String> items = new ArrayList<>();
     Activity activity;
     private int normalColor = Color.DKGRAY;
-    private int pressedColor = Color.GRAY;
+    private int pressedColor = Color.parseColor("#E0E0E0");
     public void setItems(Activity activity,List<String> items){
         this.activity=activity;
         this.items=items;
+        normalColor= ThemeManager.getCurrentPalette(activity).backItem;
     }
     @Override public int getCount() { return items.size(); }
     @Override public Object getItem(int pos) { return items.get(pos); }

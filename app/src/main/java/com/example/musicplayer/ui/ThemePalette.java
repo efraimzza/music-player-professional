@@ -13,15 +13,15 @@ public class ThemePalette {
         int primary,
         int primaryDark,
         int accent,
-        int text,
         int backItem,
+        int text,
         int background
     ) {
         this.primary = primary;
         this.primaryDark = primaryDark;
         this.accent = accent;
-        this.text = text;
         this.backItem = backItem;
+        this.text = text;
         this.background = background;
     }
 }

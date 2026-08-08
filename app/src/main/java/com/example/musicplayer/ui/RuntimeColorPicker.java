@@ -18,23 +18,24 @@ public final class RuntimeColorPicker {
         void onColorPicked(int color);
     }
 
-    private static final String PREFS = "runtime_theme";
-    private static final String COLOR = "accent_color";
+    //private static final String PREFS = "runtime_theme";
+    //private static final String COLOR = "accent_color";
 
     private RuntimeColorPicker() {
     }
 
     public static void show(
         final Activity activity,
+        String title,
         int defaultColor,
         final OnColorPickedListener listener
     ) {
-        final SharedPreferences preferences =
-            activity.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+        //final SharedPreferences preferences =
+           // activity.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
 
-        final int savedColor =
-            preferences.getInt(COLOR, defaultColor);
-
+       // final int savedColor =
+        //    preferences.getInt(COLOR, defaultColor);
+        final int savedColor=defaultColor;
         final LinearLayout layout = new LinearLayout(activity);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(dp(activity, 20), dp(activity, 16),
@@ -51,8 +52,8 @@ public final class RuntimeColorPicker {
 
         layout.addView(preview, previewParams);
 
-        final TextView hexText = new TextView(activity);
-        hexText.setTextColor(Color.DKGRAY);
+        final TextView hexText = new RuntimeTextView(activity);
+        //hexText.setTextColor(Color.DKGRAY);
         hexText.setTextSize(16);
         hexText.setPadding(0, dp(activity, 10), 0, dp(activity, 8));
         layout.addView(hexText);
@@ -65,13 +66,13 @@ public final class RuntimeColorPicker {
         greenBar.setProgress(Color.green(savedColor));
         blueBar.setProgress(Color.blue(savedColor));
 
-        layout.addView(createLabel(activity, "Red"));
+        layout.addView(createLabel(activity, "אדום"));
         layout.addView(redBar);
 
-        layout.addView(createLabel(activity, "Green"));
+        layout.addView(createLabel(activity, "ירוק"));
         layout.addView(greenBar);
 
-        layout.addView(createLabel(activity, "Blue"));
+        layout.addView(createLabel(activity, "כחול"));
         layout.addView(blueBar);
 
         final SeekBar[] bars = {
@@ -114,7 +115,7 @@ public final class RuntimeColorPicker {
         hexText.setText(toHex(savedColor));
 
         new AlertDialog.Builder(activity)
-            .setTitle("Choose theme color")
+            .setTitle("בחר צבע ל"+title)
             .setView(layout)
             .setNegativeButton("Cancel", null)
             .setPositiveButton("Apply",
@@ -129,10 +130,10 @@ public final class RuntimeColorPicker {
                         greenBar.getProgress(),
                         blueBar.getProgress()
                     );
-
+/*
                     preferences.edit()
                         .putInt(COLOR, color)
-                        .apply();
+                        .apply();*/
 
                     if (listener != null) {
                         listener.onColorPicked(color);
@@ -141,7 +142,7 @@ public final class RuntimeColorPicker {
             })
             .show();
     }
-
+/*
     public static int getSavedColor(
         Context context,
         int defaultColor
@@ -149,7 +150,7 @@ public final class RuntimeColorPicker {
         return context
             .getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .getInt(COLOR, defaultColor);
-    }
+    }*/
 
     private static SeekBar createBar(Context context) {
         SeekBar bar = new SeekBar(context);

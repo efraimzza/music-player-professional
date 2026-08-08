@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.widget.TextView;
+import com.example.musicplayer.LogUtil;
 
 public class RuntimeTextView extends TextView {
 
@@ -38,6 +39,7 @@ public class RuntimeTextView extends TextView {
         if (palette == null) {
             return;
         }
+        LogUtil.logToFile("rtv="+palette.text);
 
         setTextColor(palette.text);
         setHintTextColor(palette.text);
